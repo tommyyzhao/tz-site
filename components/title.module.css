@@ -1,0 +1,80 @@
+.title_pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(0);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px -1px #0000001a;
+}
+
+.title_pic::before,
+.title_pic::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+.title_pic::before {
+  animation: 6s rotate linear infinite;
+  width: 133%;
+  height: 133%;
+  background: conic-gradient(
+    #b005ff90,
+    #0ffcdc45,
+    #d1ff0433,
+    #ff000022,
+    #0011ff11,
+    #0011ff11,
+    #b005ff90
+  );
+  -webkit-mask: radial-gradient(transparent 51.5%, #000 53%);
+  mask: radial-gradient(transparent 51.5%, #000 53%);
+}
+
+.title_pic::after {
+  inset: 0;
+  padding: 1px;
+  border-radius: 50%;
+  background: #00000000;
+  background-clip: content-box;
+  backdrop-filter: blur(100px);
+}
+
+.logo_pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.35s ease;
+}
+
+
+.logo_pic:hover {
+  content: "";
+  filter: drop-shadow(0 -2mm 6mm #b005ff5a);
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.title_name {
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+.title_background {
+  background-color: #ffffff70;
+  border: 1px solid #0000001a;
+}
+
+.fhlogotext {
+  filter: invert(59%) sepia(86%) saturate(7484%) hue-rotate(240deg)
+    brightness(100%) contrast(102%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
